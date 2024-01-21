@@ -48,16 +48,20 @@ dataset/ folder:
 
 All the datasets (Type A: the first-year reactions + three reactions from Part 1A exam at Cambridge; Type B: [3+2] cycloaddition1 and Diels-Alder reaction dataset2; Type C: the Reaction Graph Depth 1 (RGD1))3 and the Green dataset).4 are available in the dataset/ folder as csv files. The reaction data is processed and formatted in the same style for this investigation. The atom-to-atom mapping numbering in the reaction SMILES is consistent for competitive pathways with the same reactants. There are three columns in each csv file: 
 
-•	idx: index of the reaction 
-•	code: reactions with the same code are competitive pathways (ie having the same reactants)
-•	reaction: mapped reaction SMILES
+-	idx: index of the reaction
+-	code: reactions with the same code are competitive pathways (ie having the same reactants)
+-	reaction: mapped reaction SMILES
+
 
 The RGD1 dataset csv file also has an ‘Rind’ column, which corresponds to the index in the ‘reaction’ column in the original datafile: 
 https://figshare.com/articles/dataset/model_reaction_database/21066901?file=40272727). 
 
+
 ‘da_08012024_vCorr.csv’ contains 100 Diels-Alder reactions, where the atom-to-atom mapping errors have been picked out and corrected manually.5 Before the correction, reactions with index = 2, 30, 31, 49, 66, 70, 88 and 99 contain errors. 
 
+
 Three out of 148 reactions in the first-year reaction dataset (‘first-year_data_all_27122023.csv’) had mapping errors, which were subsequently corrected manually. Before the correction, reactions with index = 50, 74 and 124 contain errors. Reactions with a code greater than 77 belong to the testing data set. 
+
 
 ## C. Scripts 
 
