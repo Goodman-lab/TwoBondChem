@@ -46,7 +46,7 @@ The scripts in this project are written in Python under the following environmen
 
 dataset/ folder:
 
-All the datasets (Type A: the first-year reactions + three reactions from Part 1A exam at Cambridge; Type B: [3+2] cycloaddition1 and Diels-Alder reaction dataset2; Type C: the Reaction Graph Depth 1 (RGD1))3 and the Green dataset).4 are available in the dataset/ folder as csv files. The reaction data is processed and formatted in the same style for this investigation. The atom-to-atom mapping numbering in the reaction SMILES is consistent for competitive pathways with the same reactants. There are three columns in each csv file: 
+All the datasets (Type A: the first-year reactions + three reactions from Part 1A exam at Cambridge; Type B: [3+2] cycloaddition1 and Diels-Alder reaction dataset; Type C: the Reaction Graph Depth 1 (RGD1)) and the Green dataset). are available in the dataset/ folder as csv files. The reaction data is processed and formatted in the same style for this investigation. The atom-to-atom mapping numbering in the reaction SMILES is consistent for competitive pathways with the same reactants. There are three columns in each csv file: 
 
 -	idx: index of the reaction
 -	code: reactions with the same code are competitive pathways (ie having the same reactants)
@@ -76,12 +76,16 @@ The files in the scripts/ folder:
 
 atidx.py: contains the functions for conducting atom-to-atom mapping and formatting the reaction SMILES strings for competitive pathways 
 competitive_pathway_atom_mapping.py: this script executes the functions in atidx.py 
-•	Associated files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
+    •	Associated files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
+
 
 get_descriptors_v2.py: contains functions for generating the atomistic descriptor components 
-•	Associated file: ‘bond_classificaation_01112022.csv’ – the parameters for generating the bond strength descriptors 
+    •	Associated file: ‘bond_classificaation_01112022.csv’ – the parameters for generating the bond strength descriptors 
+    
 get_label_v4.py: contains functions for generating the atomistic label 
+
 training_prepare_v4.py: compiles functions in ‘get_descriptors_v2.py’ and ‘get_label_v4.py’ to generate the descriptor arrays and labels for atoms in a set of reactants 
+
 model_training_v2.py: functions for training and evaluating the model 
 save_model.py: executing this script generates the ‘RF_model_yr1_28122023.sav’ file given the ‘first-year_data_all_27122023.csv’ files. 
 
