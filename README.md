@@ -76,11 +76,14 @@ The files in the scripts/ folder:
 
 atidx.py: contains the functions for conducting atom-to-atom mapping and formatting the reaction SMILES strings for competitive pathways 
 competitive_pathway_atom_mapping.py: this script executes the functions in atidx.py 
-    •	Associated files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
+
+-	Associated files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
 
 
 get_descriptors_v2.py: contains functions for generating the atomistic descriptor components 
-    •	Associated file: ‘bond_classificaation_01112022.csv’ – the parameters for generating the bond strength descriptors 
+
+-	Associated file: ‘bond_classificaation_01112022.csv’ – the parameters for generating the bond strength descriptors 
+
     
 get_label_v4.py: contains functions for generating the atomistic label 
 
