@@ -66,8 +66,10 @@ Three out of 148 reactions in the first-year reaction dataset (‘first-year_dat
 ## C. Scripts 
 
 
-RF_model_yr1_28122023.sav: A saved random forest model trained from all the first-year reactions 
+RF_model_yr1_28122023.sav: A saved random forest model trained from all the first-year reactions
+
 React.py: code for using the random forest model
+
 model_test_2.ipynb: Jupyter note on how to use the ‘React.py’ script 
 
 
@@ -79,9 +81,11 @@ competitive_pathway_atom_mapping.py: this script executes the functions in atidx
 -	Associated files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
 
 
+
 get_descriptors_v2.py: contains functions for generating the atomistic descriptor components 
 
 -	Associated file: ‘bond_classificaation_01112022.csv’ – the parameters for generating the bond strength descriptors 
+
 
     
 get_label_v4.py: contains functions for generating the atomistic label 
