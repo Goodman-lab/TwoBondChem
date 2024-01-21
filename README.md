@@ -70,9 +70,8 @@ RF_model_yr1_28122023.sav: A saved random forest model trained from all the firs
 React.py: code for using the random forest model
 model_test_2.ipynb: Jupyter note on how to use the ‘React.py’ script 
 
-scripts/ folder:
 
-The files in the scripts/ folder: 
+### The files in the scripts/ folder: 
 
 atidx.py: contains the functions for conducting atom-to-atom mapping and formatting the reaction SMILES strings for competitive pathways 
 competitive_pathway_atom_mapping.py: this script executes the functions in atidx.py 
