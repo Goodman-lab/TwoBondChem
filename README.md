@@ -60,7 +60,7 @@ https://figshare.com/articles/dataset/model_reaction_database/21066901?file=4027
 ‘da_08012024_vCorr.csv’ contains 100 Diels-Alder reactions, where the atom-to-atom mapping errors have been picked out and corrected manually.5 Before the correction, reactions with index = 2, 30, 31, 49, 66, 70, 88 and 99 contain errors. 
 
 
-Three out of 148 reactions in the first-year reaction dataset (‘first-year_data_all_27122023.csv’) had mapping errors, which were subsequently corrected manually. Before the correction, reactions with index = 50, 74 and 124 contain errors. Reactions with a code greater than 77 belong to the testing data set. 
+Three out of 147 reactions in the first-year reaction dataset (‘first-year_data_all_27122023.csv’) had mapping errors, which were subsequently corrected manually. Before the correction, reactions with index = 50, 74 and 124 contain errors. Reactions with a code greater than 77 belong to the testing data set. 
 
 
 ## C. Scripts 
