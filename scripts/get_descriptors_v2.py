@@ -382,10 +382,10 @@ def get_bondlength_df(mol):
 
 #path = '/'.join(sys.argv[0].split('/')[:-1])+'/'
 
-#bond_class_para = 'bond_classificaation_01112022.csv'
+#bond_class_para = 'bond_classification_01112022.csv'
 
 class bondtype:
-    def __init__(self, bond_class_para='bond_classificaation_01112022.csv'):
+    def __init__(self, bond_class_para='bond_classification_01112022.csv'):
         
         ## import and process bond_class_para to get the criteria for classifying the bonds 
         

@@ -398,6 +398,7 @@ def mapping_competitive_pathways(reaction_df, v):
     rxn_ls=sub_rxn_df['reaction'].tolist()
     idx_ls=sub_rxn_df['idx'].tolist()
     code_ls=sub_rxn_df['code'].tolist()
+    #ea_ls=sub_rxn_df['ea'].tolist()
     
     code_value=code_ls[0]
     
@@ -446,23 +447,56 @@ def mapping_competitive_pathways(reaction_df, v):
         new_rxn_ls.append(react_smi2+'>>'+prod_smi2)
         error_ls.append(error_tag)
     
-    new_rxn_df=pd.DataFrame({'idx':idx_ls,'code':code_ls, 'reaction':new_rxn_ls,
-                            'error':error_ls})
+    #new_rxn_df=pd.DataFrame({'idx':idx_ls,'code':code_ls, 'reaction':new_rxn_ls,'ea':ea_ls,
+    #                        'error':error_ls})
+
+    new_rxn_df=pd.DataFrame({'idx':idx_ls,'code':code_ls, 'reaction':new_rxn_ls,'error':error_ls})
     
     return new_rxn_df
     
     
     
-def mapping_competitive_pathways_all(reaction_df ):
+def mapping_competitive_pathways_all(csv):
     
-    #reaction_df = pd.read_csv(csv)
+    reaction_df = pd.read_csv(csv)
     
     unique_code = reaction_df['code'].unique().tolist()
-    sub_rxn_df_ls=[mapping_competitive_pathways(reaction_df, v) for v in unique_code]
+    sub_rxn_df_ls=[]
+    for v in unique_code:
+        #try:
+        result=mapping_competitive_pathways(reaction_df, v)
+        sub_rxn_df_ls.append(result)
+        #except:
+        #    print(v)
+
+
     rxn_df = pd.concat(sub_rxn_df_ls)
+
+    rxn_df['code'] = parah_code(rxn_df['code'].tolist())
+    rxn_df['idx'] = [i for i in range(0,len(rxn_df))]
     
     return rxn_df 
-      
+
+
+def parah_code(given_list):
+
+    first_value=given_list[0]
+    first_code=0
+
+    new_code_ls=[0]
+
+    for v in given_list[1:]:
+        
+        if v != first_value:
+            first_value=v
+            first_code += 1
+
+            new_code_ls.append(first_code)
+
+        else:
+            new_code_ls.append(first_code)
+    
+    return new_code_ls
             
             
             
