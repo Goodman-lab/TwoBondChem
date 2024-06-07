@@ -152,6 +152,10 @@ for j in range(0,5):
         test_df = sample_df[sample_df['code']<i]
         training_df = sample_df[(sample_df['code']>=i)]
 
+        ### uncomment the below if you wish to vary the training data set instead
+        #training_df = sample_df[sample_df['code']<i]
+        #test_df = sample_df[sample_df['code']<i]
+
         test_df_ls.append(test_df)
         train_df_ls.append(training_df)
 

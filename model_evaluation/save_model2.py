@@ -61,6 +61,8 @@ date_str=today.strftime("%d%m%Y")
 this_python_script_name= sys.argv[0].split('/')[-1][:-3]
 
 
+###################
+
 filename_ls = ['diels_alder_data_v7_19052024.csv','cyclo_data_v2_13012024.csv']
 ram_data_ls = [give_random_sample(f) for f in filename_ls]
 ele_steps = pd.concat(ram_data_ls)
@@ -75,6 +77,8 @@ print('done: test.generate_data()')
 
 test.training(save_model = True, file_name='RF_model_Bmix_')
 
+
+###################
 
 filename_ls = ['fav_RGD1_13012024_v2.csv','green_04012024.csv']
 ram_data_ls = [give_random_sample(f) for f in filename_ls]
