@@ -94,6 +94,7 @@ React_v2.py: code for using the random forest model
 
 model_test_3.ipynb: Jupyter note on how to use the ‘React.py’ script 
 
+RF = Random Forest
 
 Saved models: 
 
