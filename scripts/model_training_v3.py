@@ -86,7 +86,7 @@ def get_LoopingLs(df, rxn_no='all', v=1):
     full_ls=[i for i in range(0,n)]
     nested_list = []
 
-    sub_idx_ls=list(range(0, len(full_ls)+1, v))
+    sub_idx_ls=list(range(0, len(full_ls), v))
 
     for idx in range(0, len(sub_idx_ls)):
         try:

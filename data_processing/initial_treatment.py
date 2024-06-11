@@ -17,11 +17,13 @@ def list_duplicates(seq):
 ###########################
 ## RGD1 dataset initial processing 
 
-
-
+# change the activation energy cut-off here
 cut_off=40
 
 full_data=pd.read_csv('RGD1CHNO_AMsmiles.csv').rename(columns={"reaction": "Rind"})
+#'RGD1CHNO_AMsmiles.csv' 
+#https://figshare.com/articles/dataset/model_reaction_database/21066901?file=40272727 
+
 fav_data=full_data[(full_data['DH']<0)&(full_data['DG_F']<cut_off)].copy()
 
 react_ls=fav_data['reactant'].tolist()
@@ -62,11 +64,14 @@ fav_data3.to_csv('rgd_ea40.csv', index=False)
 ###########################
 ## Green dataset initial processing 
 
-
+# change the activation energy cut-off here
 cut_off=40
 
 
 full_data=pd.read_csv('b97d3.csv')
+#'b97d3.csv'
+#https://zenodo.org/record/3552859
+
 fav_data=full_data[(full_data['dh']<0)&(full_data['ea']<cut_off)].copy()
 
 
@@ -109,7 +114,8 @@ fav_data3.to_csv('green_ea40.csv',  index=False)
 ## Diels-Alder dataset initial processing 
 
 full_data=pd.read_csv('diels_alder_data.csv')
-
+# 'trained.txt' was converted to a csv file manually by changing the file name suffix 
+# https://github.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/tree/main/dataset
 
 rxn_ls1=full_data['reaction'].tolist()
 rxn_ls=[]
@@ -162,6 +168,8 @@ full_data3.to_csv('diels_alder_data_v3.csv',index=False)
 
 
 full_data=pd.read_csv('reactions_combined_finalized.csv')
+## 'reactions_combined_finalized.csv'
+## https://github.com/coleygroup/dipolar_cycloaddition_dataset/blob/main/dataset_construction/final_datasets/reactions_combined_finalized.csv
 
 
 rxn_ls=full_data['reaction'].tolist()

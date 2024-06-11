@@ -26,6 +26,7 @@ TwoBondChem/
 │   └─ rgd_ea60_c_23052024.csv
 ├─ model_evaluation/
 │   ├─ chk_dup_v3.py
+│   ├─ evaluation.py
 │   ├─ random_sample_test.py
 │   ├─ random_sample_test_all.py
 │   ├─ random_sample_test_Bmix.py
@@ -157,5 +158,5 @@ save_model.py: executing this script to train models using reactions from a sing
 save_model2.py: executing this script to train models using reactions from multiple datasets and return the trained models in .sav files
 
 
-
+evaluation.py: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
 
