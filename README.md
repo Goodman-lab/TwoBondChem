@@ -97,6 +97,16 @@ model_test_3.ipynb: Jupyter note on how to use the ‘React.py’ script
 
 Saved models: 
 
+File  |  Note
+--- | ---
+RF_model_yr1_28122023.sav  |  RF model trained from all reactions in the first-year dataset
+RF_model_cyclo_11062024.sav  |  RF model trained from the first 100 reactions in the [3+2] cycloaddition dataset
+RF_model_da_11062024.sav  |  RF model trained from the first 100 reactions in the Diels-Alder dataset
+RF_model_green_11062024.sav  |  RF model trained from the first 100 reactions in the Green dataset
+RF_model_rgd_11062024.sav  |  RF model trained from the first 300 reactions in RGD1 dataset
+RF_model_Bmix_11062024.sav  |  RF model trained from 100 sets of randomly selected [3+2] cycloaddition reactions and 100 sets of randomly selected Diels-Alder reactions.
+RF_model_Cmix_11062024.sav  |  RF model trained from 100 sets of randomly selected Green reactions and 100 sets of randomly selected RGD1 reactions.
+RF_model_all_11062024.sav  |  RF model trained from 78 sets of first-year reactions, 100 sets of [3+2] cycloaddition reactions, 100 sets of Diels-Alder reactions, 100 sets of Green reactions and 100 sets of RGD1 reactions. All reactions were randomly selected from the corresponding full dataset.
 
 
 ### scripts/ folder: 
