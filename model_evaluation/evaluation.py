@@ -135,8 +135,13 @@ def comp_evaluation(opt_files_raw):
         no_fault_ls.append(len([i for i in xallfault_ls if i == 0])/len(xallfault_ls))
         no_fault1_ls.append(len([i for i in xallfault_ls if i <= 1])/len(xallfault_ls))
     
-        
-        
+
+    # accuracy, recall and precision is by atoms
+
+    #% sets of reactants with:  
+    #no_fault = No fault predictions
+    #no_fault1 = No more than one fault prediction
+    #n_fn = All reactive atoms predicted correctly
         
     result=pd.DataFrame({'file':opt_files_name, 'accuracy':accur_ls,  'recall':recall_ls,'precision':precision_ls,
                          'no_fault':no_fault_ls,'no_fault1':no_fault1_ls, 'n_fn':nfn_ls})

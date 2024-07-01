@@ -92,7 +92,7 @@ data_processing/competitive_pathway_atom_mapping.py input and output example fil
 
 React_v2.py: code for using the random forest model
 
-model_test_3.ipynb: Jupyter note on how to use the ‘React.py’ script 
+model_test_3.ipynb: Jupyter notebook on how to use the ‘React.py’ script 
 
 RF = Random Forest
 
