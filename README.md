@@ -166,8 +166,24 @@ test_size_test.py: The script for investigating the effect of varying the testin
 
 save_model.py: executing this script to train models using reactions from a single dataset and return the trained models in .sav files
 
+
 save_model2.py: executing this script to train models using reactions from multiple datasets and return the trained models in .sav files
 
 
 evaluation.py: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
+
+
+All the scripts under the model_evaluation/ should be moved from TwoBondChem/model_evaluation/ to TwoBondChem/ before execution. The following files under TwoBondChem/ provide an example of the training and evaluation procedure: 
+
+
+random_sample_test_EXAMPLE.py: training and testing for 2-bond+ models trained from the [3+2] cycloaddition dataset. The code is taken from ‘random_sample_test.py’ under model_evaluation/ folder. This script can be executed as it is from the TwoBondChem/ folder
+
+
+cyclo_2b+/ contains output files from executing the ‘random_sample_test_EXAMPLE.py’ script
+
+
+evaluate_EXAMPLE.ipynb: evaluation of the predictions using the ‘evaluation.py’ under model_evaluation/ folder
+
+
+
 
