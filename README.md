@@ -169,7 +169,7 @@ RF_model_all_11062024.sav  |  RF model trained from 78 sets of first-year reacti
 **chk_dup_v3.py**: check if there is an overlap between datasets
 
 
-**random_sample_test.py**, **random_sample_test_all.py**, **random_sample_test_Bmix.py**, random_sample_test_Cmix.py: scripts for carrying out random sampling test 
+**random_sample_test.py**, **random_sample_test_all.py**, **random_sample_test_Bmix.py**, **random_sample_test_Cmix.py**: scripts for carrying out random sampling test 
 
 
 **take_one_out_test.py**: the script for carrying out the take-one-out cross-validation test 
