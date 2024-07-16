@@ -14,7 +14,7 @@ TwoBondChem/
 │   ├─ initial_treatment.py
 │   └─ remove_emb_error.py
 ├─ dataset/
-│   ├─ cyclo_data_v2_13012024.csv
+│   ├─ cyclo_data_v2_16072024.csv
 │   ├─ da_08012024_vCorr.csv
 │   ├─ diels_alder_data_v7_19052024.csv
 │   ├─ exam_test.csv
@@ -46,6 +46,19 @@ TwoBondChem/
     ├─ get_label_v4.py
     ├─ model_training_v3.py
     └─ training_prepare_v5.py
+├─ cyclo_2b+/
+│   ├─ cyclo_0_13012024_label.csv
+│   ├─ cyclo_1_13012024_label.csv
+│   ├─ cyclo_2_13012024_label.csv
+│   ├─ cyclo_3_13012024_label.csv
+│   ├─ cyclo_4_13012024_label.csv
+│   ├─ cyclo_5_13012024_label.csv
+│   ├─ cyclo_6_13012024_label.csv
+│   ├─ cyclo_7_13012024_label.csv
+│   ├─ cyclo_8_13012024_label.csv
+│   └─ cyclo_9_13012024_label.csv
+├─ random_sample_test_EXAMPLE.py
+└─ evaluate_EXAMPLE.ipynb
 
 *Archive files have not been included 
 
@@ -77,22 +90,22 @@ The RGD1 dataset csv file also has an ‘Rind’ column, which corresponds to th
 https://figshare.com/articles/dataset/model_reaction_database/21066901?file=40272727). 
 
 
-‘da_08012024_vCorr.csv’ contains 100 Diels-Alder reactions, where the atom-to-atom mapping errors have been picked out and corrected manually.5 Before the correction, reactions with index = 2, 30, 31, 49, 66, 70, 88 and 99 contain errors. 
+**‘da_08012024_vCorr.csv’** contains 100 Diels-Alder reactions, where the atom-to-atom mapping errors have been picked out and corrected manually.5 Before the correction, reactions with index = 2, 30, 31, 49, 66, 70, 88 and 99 contain errors. 
 
 
-Three out of 147 reactions in the first-year reaction dataset (‘first-year_data_all_27122023.csv’) had mapping errors, which were subsequently corrected manually. Before the correction, reactions with index = 50, 74 and 124 contain errors. Reactions with a code greater than 77 belong to the testing data set. 
+Three out of 147 reactions in the first-year reaction dataset (**‘first-year_data_all_27122023.csv’**) had mapping errors, which were subsequently corrected manually. Before the correction, reactions with index = 50, 74 and 124 contain errors. Reactions with a code greater than 77 belong to the testing data set. 
 
-We filtered and processed the RGD1 and the Green datasets to ensure that the reactions are thermodynamically favourable (ie ΔHr < 0 kcal mol-1) with a low kinetic barrier (ie activation energy, EA < 40 kcal mol-1). This gives the ‘fav_RGD1_13012024_v2.csv’ and ‘green_04012024.csv’. To study the effect of varying the EA cut-off, we also filtered and processed the RGD1 and the Green datasets with an EA cut-off of 60 kcal mol and ΔHr < 0 kcal mol-1 – ‘rgd_ea60_c_23052024.csv’ and ‘green_ea60_c_23052024.csv’.
+We filtered and processed the RGD1 and the Green datasets to ensure that the reactions are thermodynamically favourable (ie ΔHr < 0 kcal mol-1) with a low kinetic barrier (ie activation energy, EA < 40 kcal mol-1). This gives the **‘fav_RGD1_13012024_v2.csv’** and **‘green_04012024.csv’**. To study the effect of varying the EA cut-off, we also filtered and processed the RGD1 and the Green datasets with an EA cut-off of 60 kcal mol and ΔHr < 0 kcal mol-1 – **‘rgd_ea60_c_23052024.csv’** and **‘green_ea60_c_23052024.csv’**.
 
-data_processing/competitive_pathway_atom_mapping.py input and output example files: ‘exam_test.csv’ and ‘exam_test_28122023.csv’
+data_processing/competitive_pathway_atom_mapping.py input and output example files: **‘exam_test.csv’** and **‘exam_test_28122023.csv’**
 
 
 ## C. Scripts 
 
 
-React_v2.py: code for using the random forest model
+**React_v2.py**: code for using the random forest model
 
-model_test_3.ipynb: Jupyter notebook on how to use the ‘React.py’ script 
+**model_test_3.ipynb**: Jupyter notebook on how to use the ‘React.py’ script 
 
 RF = Random Forest
 
@@ -112,78 +125,79 @@ RF_model_all_11062024.sav  |  RF model trained from 78 sets of first-year reacti
 
 ### scripts/ folder: 
 
-atidx.py: contains the functions for conducting atom-to-atom mapping and formatting the reaction SMILES strings for competitive pathways 
+**atidx.py**: contains the functions for conducting atom-to-atom mapping and formatting the reaction SMILES strings for competitive pathways 
 
 
-get_descriptors_v2.py: contains functions for generating the atomistic descriptor components 
+**get_descriptors_v2.py**: contains functions for generating the atomistic descriptor components 
 
--   Associated file: ‘bond_classification_01112022.csv’ – the parameters for generating the bond strength descriptors 
+-   Associated file: **‘bond_classification_01112022.csv’** – the parameters for generating the bond strength descriptors 
 
 
-get_label_v4.py: contains functions for generating the atomistic label 
+**get_label_v4.py**: contains functions for generating the atomistic label 
 
-training_prepare_v5.py: compiles functions in ‘get_descriptors_v2.py’ and ‘get_label_v4.py’ to generate the descriptor arrays and labels for atoms in a set of reactants
+**training_prepare_v5.py**: compiles functions in ‘get_descriptors_v2.py’ and ‘get_label_v4.py’ to generate the descriptor arrays and labels for atoms in a set of reactants
 
-model_training_v3.py: functions for training and evaluating the model 
+**model_training_v3.py**: functions for training and evaluating the model 
 
 
 ### data_processing/ folder: 
 
 
-initial_treatment.py: group reactions with the same reactants together vis InChI strings; for the Diels-Alder dataset only, reactions with placeholder atoms are also removed. Reactions with hypervalent molecules lead to errors in the model training and testing. They are removed manually from the Diels-Alder dataset.
+**initial_treatment.py**: group reactions with the same reactants together vis InChI strings; for the Diels-Alder dataset only, reactions with placeholder atoms are also removed. Reactions with hypervalent molecules lead to errors in the model training and testing. They are removed manually from the Diels-Alder dataset.
 
 
-remove_emb_error.py: filter reactions with 3D structure errors
+**remove_emb_error.py**: filter reactions with 3D structure errors
 
 
-competitive_pathway_atom_mapping.py: This script executes the functions in atidx.py to conduct atom-to-atom mapping of individual reactions and between the competitive pathways. This process was conducted only on the first-year and Diels-Alder datasets. 
+**competitive_pathway_atom_mapping.py**: This script executes the functions in atidx.py to conduct atom-to-atom mapping of individual reactions and between the competitive pathways. This process was conducted only on the first-year and Diels-Alder datasets. 
 
--   Associated files in the dataset/ folder: ‘exam_test.csv’ and ‘exam_test_28122023.csv’ – the input and output csv file from executing the script are provided for illustrations 
+
+-   Associated files in the dataset/ folder: **‘exam_test.csv’** and **‘exam_test_28122023.csv’** – the input and output csv file from executing the script are provided for illustrations 
 
 
 ### bond_strength_descriptor/ folder: 
 
 
-bondlength_fromsmi_v2.py: gather bond length data from SMILES strings 
+**bondlength_fromsmi_v2.py**: gather bond length data from SMILES strings 
 
-bond_pre_classifier_v2.py: using the bond length data to generate bond strength descriptor classification criteria, ie the ‘bond_classification_01112022.csv’ file
+**bond_pre_classifier_v2.py**: using the bond length data to generate bond strength descriptor classification criteria, ie the ‘bond_classification_01112022.csv’ file
 
 
 ### model_evaluation/ folder: 
 
 
-chk_dup_v3.py: check if there is an overlap between datasets
+**chk_dup_v3.py**: check if there is an overlap between datasets
 
 
-random_sample_test.py, random_sample_test_all.py, random_sample_test_Bmix.py, random_sample_test_Cmix.py: scripts for carrying out random sampling test 
+**random_sample_test.py**, **random_sample_test_all.py**, **random_sample_test_Bmix.py**, random_sample_test_Cmix.py: scripts for carrying out random sampling test 
 
 
-take_one_out_test.py: the script for carrying out the take-one-out cross-validation test 
+**take_one_out_test.py**: the script for carrying out the take-one-out cross-validation test 
 
 
-test_size_test.py: The script for investigating the effect of varying the testing or training dataset size 
+**test_size_test.py**: The script for investigating the effect of varying the testing or training dataset size 
 
 
-save_model.py: executing this script to train models using reactions from a single dataset and return the trained models in .sav files
+**save_model.py**: executing this script to train models using reactions from a single dataset and return the trained models in .sav files
 
 
-save_model2.py: executing this script to train models using reactions from multiple datasets and return the trained models in .sav files
+**save_model2.py**: executing this script to train models using reactions from multiple datasets and return the trained models in .sav files
 
 
-evaluation.py: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
+**evaluation.py**: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
 
 __________________________
 
 All the scripts under the model_evaluation/ should be moved from TwoBondChem/model_evaluation/ to TwoBondChem/ before execution. The following files under TwoBondChem/ provide an example of the training and evaluation procedure: 
 
 
-random_sample_test_EXAMPLE.py: training and testing for 2-bond+ models trained from the [3+2] cycloaddition dataset. The code is taken from ‘random_sample_test.py’ under model_evaluation/ folder. This script can be executed as it is from the TwoBondChem/ folder
+**random_sample_test_EXAMPLE.py**: training and testing for 2-bond+ models trained from the [3+2] cycloaddition dataset. The code is taken from ‘random_sample_test.py’ under model_evaluation/ folder. This script can be executed as it is from the TwoBondChem/ folder
 
 
-cyclo_2b+/ contains output files from executing the ‘random_sample_test_EXAMPLE.py’ script
+**cyclo_2b+/** contains output files from executing the ‘random_sample_test_EXAMPLE.py’ script
 
 
-evaluate_EXAMPLE.ipynb: evaluation of the predictions using the ‘evaluation.py’ under model_evaluation/ folder
+**evaluate_EXAMPLE.ipynb**: evaluation of the predictions using the ‘evaluation.py’ under model_evaluation/ folder
 
 
 
