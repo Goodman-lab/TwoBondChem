@@ -172,6 +172,7 @@ save_model2.py: executing this script to train models using reactions from multi
 
 evaluation.py: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
 
+__________________________
 
 All the scripts under the model_evaluation/ should be moved from TwoBondChem/model_evaluation/ to TwoBondChem/ before execution. The following files under TwoBondChem/ provide an example of the training and evaluation procedure: 
 
