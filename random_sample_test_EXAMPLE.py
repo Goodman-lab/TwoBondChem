@@ -116,77 +116,35 @@ def give_random_sample(filename):
 
     return sample_df
 
+##########
 
-
-filename1 = './dataset/diels_alder_data_v7_19052024.csv'
-filename2 = './dataset/cyclo_data_v2_16072024.csv'
-
-keyword = 'B_2b+'
-
+filename = './dataset/cyclo_data_v2_16072024.csv'
 model_ls = []
 
 test_df_ls=[]
 train_df_ls=[]
 
 
-#'cyclo','da',,'RGD1','green'
-
 for i in range(0,10):
 
     model_ls.append('_'+str(i))
 
-    sample_df1=give_random_sample(filename1)
-    sample_df2=give_random_sample(filename2)
+    sample_df=give_random_sample(filename)
 
-    test_df1 = sample_df1[sample_df1['code']<100]
-    training_df1 = sample_df1[sample_df1['code']>=100]
-
-    test_df2 = sample_df2[sample_df2['code']<100]
-    training_df2 = sample_df2[sample_df2['code']>=100]
-
-    test_df_ = pd.concat([test_df1, test_df2])
-    train_df_ = pd.concat([training_df1, training_df2])
-
-    test_df=test_df_.copy()
-    train_df=train_df_.copy()
-
-    test_df['code'] = parah_code(test_df_['code'].tolist())
-    test_df['idx'] = [i for i in range(0,len(test_df_))]
-
-    train_df['code'] = parah_code(train_df_['code'].tolist())
-    train_df['idx'] = [i for i in range(0,len(train_df_))]
+    test_df = sample_df[sample_df['code']<100]
+    training_df = sample_df[(sample_df['code']>=100)]
 
     test_df_ls.append(test_df)
-    train_df_ls.append(train_df)
+    train_df_ls.append(training_df)
 
 
+keyword = 'cyclo_2b+'
 
 label_df_ls=[]
 for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
     result_df=Onepot(train,test, model = 'RF',descriptor_arr = '2-bond+')
     result_df.to_csv(keyword +mod+'_'+date_str+'.csv')
     label_df_ls.append(result_df)
-
-keyword = 'B_2b'
-
-label_df_ls=[]
-for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
-    result_df=Onepot(train,test, model = 'RF',descriptor_arr = '2-bond')
-    result_df.to_csv(keyword +mod+'_'+date_str+'.csv')
-    label_df_ls.append(result_df)
-
-
-keyword = 'B_1b'
-
-label_df_ls=[]
-for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
-    result_df=Onepot(train,test, model = 'RF',descriptor_arr = '1-bond')
-    result_df.to_csv(keyword +mod+'_'+date_str+'.csv')
-    label_df_ls.append(result_df)
-
-
-
-
 
 
 

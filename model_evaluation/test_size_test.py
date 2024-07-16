@@ -118,15 +118,15 @@ def give_random_sample(filename,sample_size=200):
 
 
 
-filename = 'fav_RGD1_13012024_v2.csv'
+filename = './dataset/fav_RGD1_13012024_v2.csv'
 keyword = 'rgd_size'
 
 ## uncomment the below to conduct tests on these dataset 
 
-#filename = 'diels_alder_data_v7_19052024.csv'
+#filename = './dataset/diels_alder_data_v7_19052024.csv'
 #keyword = 'da_size'
 
-#filename = 'cyclo_data_v2_13012024.csv'
+#filename = './dataset/cyclo_data_v2_16072024.csv'
 #keyword = 'cycl_size'
 
 

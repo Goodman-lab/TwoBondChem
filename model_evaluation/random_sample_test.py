@@ -118,7 +118,7 @@ def give_random_sample(filename):
 
 ##########
 
-filename = 'first-year_data_all_27122023.csv'
+filename = './dataset/first-year_data_all_27122023.csv'
 keyword = 'yr1_2b+'
 
 model_ls = []
@@ -169,7 +169,7 @@ for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
 
 ##########
 
-filename = 'cyclo_data_v2_13012024.csv'
+filename = './dataset/cyclo_data_v2_16072024.csv'
 model_ls = []
 
 test_df_ls=[]
@@ -220,7 +220,7 @@ for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
 #################
 
 
-filename = 'diels_alder_data_v7_19052024.csv'
+filename = './dataset/diels_alder_data_v7_19052024.csv'
 keyword = 'da_2b+'
 
 model_ls = []
@@ -262,7 +262,7 @@ for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
 
 #################
 
-filename = 'fav_RGD1_13012024_v2.csv'
+filename = './dataset/fav_RGD1_13012024_v2.csv'
 keyword = 'rgd_2b+'
 
 model_ls = []
@@ -315,7 +315,7 @@ for test,train,mod in zip(test_df_ls,train_df_ls,model_ls):
 
 #################
 
-filename = 'green_04012024.csv'
+filename = './dataset/green_04012024.csv'
 
 model_ls = []
 

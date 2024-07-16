@@ -23,7 +23,7 @@ this_python_script_name= sys.argv[0].split('/')[-1][:-3]
 
 #####################
 
-ele_stepsx = pd.read_csv('green_04012024.csv')
+ele_stepsx = pd.read_csv('./dataset/green_04012024.csv')
 
 
 ## uncomment to change to other datasets

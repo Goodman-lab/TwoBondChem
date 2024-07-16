@@ -118,8 +118,8 @@ def give_random_sample(filename):
 
 
 
-filename1 = 'fav_RGD1_13012024_v2_nodu.csv'
-filename2 = 'green_04012024.csv'
+filename1 = './dataset/fav_RGD1_13012024_v2_nodu.csv'
+filename2 = './dataset/green_04012024.csv'
 
 keyword = 'C_2b+'
 

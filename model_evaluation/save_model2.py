@@ -63,7 +63,7 @@ this_python_script_name= sys.argv[0].split('/')[-1][:-3]
 
 ###################
 
-filename_ls = ['diels_alder_data_v7_19052024.csv','cyclo_data_v2_13012024.csv']
+filename_ls = ['./dataset/diels_alder_data_v7_19052024.csv','./dataset/cyclo_data_v2_13012024.csv']
 ram_data_ls = [give_random_sample(f) for f in filename_ls]
 ele_steps = pd.concat(ram_data_ls)
 
@@ -80,7 +80,7 @@ test.training(save_model = True, file_name='RF_model_Bmix_')
 
 ###################
 
-filename_ls = ['fav_RGD1_13012024_v2.csv','green_04012024.csv']
+filename_ls = ['./dataset/fav_RGD1_13012024_v2.csv','./dataset/green_04012024.csv']
 ram_data_ls = [give_random_sample(f) for f in filename_ls]
 ele_steps = pd.concat(ram_data_ls)
 
@@ -97,10 +97,10 @@ test.training(save_model = True, file_name='RF_model_Cmix_')
 
 ###################
 
-yr1_data=pd.read_csv('first-year_data_all_27122023.csv')
+yr1_data=pd.read_csv('./dataset/first-year_data_all_27122023.csv')
 
-filename_ls = ['diels_alder_data_v7_19052024.csv','cyclo_data_v2_13012024.csv',
-'fav_RGD1_13012024_v2.csv','green_04012024.csv']
+filename_ls = ['./dataset/diels_alder_data_v7_19052024.csv','./dataset/cyclo_data_v2_16072024.csv',
+'./dataset/fav_RGD1_13012024_v2.csv','./dataset/green_04012024.csv']
 
 
 

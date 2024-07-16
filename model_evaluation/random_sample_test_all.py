@@ -147,11 +147,11 @@ def give_random_sample(filename):
     return sample_df
 
 
-filename = 'first-year_data_all_27122023.csv'
+filename = './dataset/first-year_data_all_27122023.csv'
 
 
-filename_ls = ['cyclo_data_v2_13012024.csv', 'diels_alder_data_v7_19052024.csv', 
-                'fav_RGD1_13012024_v2_nodu.csv', 'green_04012024.csv']
+filename_ls = ['./dataset/cyclo_data_v2_16072024.csv', './dataset/diels_alder_data_v7_19052024.csv', 
+                './dataset/fav_RGD1_13012024_v2_nodu.csv', './dataset/green_04012024.csv']
 
 keyword = 'all_2b+'
 
