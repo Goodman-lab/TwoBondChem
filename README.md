@@ -166,6 +166,9 @@ RF_model_all_11062024.sav  |  RF model trained from 78 sets of first-year reacti
 ### model_evaluation/ folder: 
 
 
+All the scripts under the model_evaluation/ should be moved from TwoBondChem/model_evaluation/ to TwoBondChem/ before execution.
+
+
 **chk_dup_v3.py**: check if there is an overlap between datasets
 
 
@@ -186,9 +189,12 @@ RF_model_all_11062024.sav  |  RF model trained from 78 sets of first-year reacti
 
 **evaluation.py**: This script takes the .csv output from the above script to calculate performance metrics by comparing the predictions with the actual labels.
 
+
+**hyperpara_test_v5.py** and **para_df.csv**: the script and csv file for conducting hyperparameter tuning 
+
 __________________________
 
-All the scripts under the model_evaluation/ should be moved from TwoBondChem/model_evaluation/ to TwoBondChem/ before execution. The following files under TwoBondChem/ provide an example of the training and evaluation procedure: 
+The following files under TwoBondChem/ provide an example of the training and evaluation procedure: 
 
 
 **random_sample_test_EXAMPLE.py**: training and testing for 2-bond+ models trained from the [3+2] cycloaddition dataset. The code is taken from ‘random_sample_test.py’ under model_evaluation/ folder. This script can be executed as it is from the TwoBondChem/ folder
